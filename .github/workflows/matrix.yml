@@ -10,7 +10,7 @@ jobs:
         include:
           - os: ubuntu-latest
             node_version: 8
-            ubuntu_8: "true"
+            ubuntu_8: "true" # true value is visible only in ubuntu os node-version 8.
         exclude:
           - os: ubuntu-latest
             node_version: 7
@@ -29,6 +29,6 @@ jobs:
         run: |
           node -v
           echo $UBUNTU_8
-          
-
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'    
     
